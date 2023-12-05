@@ -10,32 +10,40 @@ import java.util.Scanner;
  *
  * @author rafal
  */
+
+
 public class AverageFrom3Numbers {
-    public static void main(String[] args) {
+
+    public void calculateAverage() {
         Scanner scanner = new Scanner(System.in);
-System.out.print("Podaj pierwszą liczbę: ");
-double liczba1 = scanner.nextDouble();
-if (liczba1 > 0) {
-    System.out.println("Liczba pierwsza jest większa od zera");
+
+        double liczba1 = wczytajLiczbe("Podaj pierwszą liczbę: ", scanner);
+        if (liczba1 > 0) {
+            System.out.println("Liczba pierwsza jest większa od zera");
+        } else {
+            System.out.println("Liczba pierwsza nie jest większa od zera");
+        }
+
+        double liczba2 = wczytajLiczbe("Podaj drugą liczbę: ", scanner);
+        if (liczba2 > 0) {
+            System.out.println("Liczba druga jest większa od zera");
+        } else {
+            System.out.println("Liczba druga nie jest większa od zera");
+        }
+
+        double liczba3 = wczytajLiczbe("Podaj trzecią liczbę: ", scanner);
+        if (liczba3 > 0) {
+            System.out.println("Liczba trzecia jest większa od zera");
+        } else {
+            System.out.println("Liczba trzecia nie jest większa od zera");
+        }
+
+        System.out.println("Srednia z trzech podanych liczb to: " + (liczba1 + liczba2 + liczba3) / 3);
+    }
+
+    private static double wczytajLiczbe(String komunikat, Scanner scanner) {
+        System.out.print(komunikat);
+        return scanner.nextDouble();
+    }
 }
-else{
-    System.out.println("Liczba pierwsza nie jest większa od zera");
-}
-System.out.println("Podaj drugą liczbę: ");
-double liczba2 = scanner.nextDouble();
-if (liczba2 > 0) {
-    System.out.println("Liczba druga jest większa od zera");
-}
-else{
-    System.out.println("Liczba druga nie jest większa od zera");
-}
-System.out.println("Podaj trzecią liczbę: ");
-double liczba3 = scanner.nextDouble();
-if (liczba3 > 0) {
-    System.out.println("Liczba trzecia jest większa od zera");
-}
-else{
-    System.out.println("Liczba trzecia nie jest większa od zera");
-} 
-System.out.println("Srednia z trzech podanych liczb to: " + (liczba1 + liczba2 + liczba3) /3);    }
-}
+
